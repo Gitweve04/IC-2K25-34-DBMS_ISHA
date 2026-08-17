@@ -1,0 +1,21 @@
+1. DISPLAY FIRST NAME AND LAST NAME:
+CREATE DATABASE hr;
+
+USE hr;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
+
+INSERT INTO employees (employee_id, first_name, last_name)
+VALUES
+(1, 'Ellen', 'Abel'),
+(2, 'Sundar', 'Ande'),
+(3, 'David', 'Austin'),
+(4, 'Nancy', 'Green');
+
+SELECT first_name AS `First Name`,
+       last_name AS `Last Name`
+FROM employees;
