@@ -1,0 +1,40 @@
+mysql> SELECT employee_id, first_name, last_name, salary
+    -> FROM employees;
++-------------+------------+-----------+----------+
+| employee_id | first_name | last_name | salary   |
++-------------+------------+-----------+----------+
+|           1 | Ellen      | Abel      | 50000.00 |
+|           2 | Sundar     | Ande      | 60000.00 |
+|           3 | David      | Austin    | 45000.00 |
+|           4 | Nancy      | Green     | 55000.00 |
++-------------+------------+-----------+----------+
+4 rows in set (0.00 sec)
+mysql> ALTER TABLE employees
+    -> ADD job_id VARCHAR(20);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE employees SET job_id = 'IT_PROG' WHERE employee_id = 1;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE employees SET job_id = 'SA_REP' WHERE employee_id = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE employees SET job_id = 'IT_PROG' WHERE employee_id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE employees SET job_id = 'HR_REP' WHERE employee_id = 4;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT COUNT(DISTINCT job_id) AS `Number of Jobs`
+    -> FROM employees;
++----------------+
+| Number of Jobs |
++----------------+
+|              3 |
++----------------+
+1 row in set (0.02 sec)
