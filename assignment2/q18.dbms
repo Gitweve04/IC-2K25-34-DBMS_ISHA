@@ -1,0 +1,24 @@
+
+mysql> SELECT employee_id, first_name, last_name, salary
+    -> FROM employees;
++-------------+------------+-----------+----------+
+| employee_id | first_name | last_name | salary   |
++-------------+------------+-----------+----------+
+|           1 | Ellen      | Abel      | 50000.00 |
+|           2 | Sundar     | Ande      | 60000.00 |
+|           3 | David      | Austin    | 45000.00 |
+|           4 | Nancy      | Green     | 55000.00 |
++-------------+------------+-----------+----------+
+4 rows in set (0.00 sec)
+mysql> SELECT *
+    -> FROM employees
+    -> LIMIT 10;
++-------------+------------+-----------+---------------+----------+---------+
+| employee_id | first_name | last_name | department_id | salary   | job_id  |
++-------------+------------+-----------+---------------+----------+---------+
+|           1 | Ellen      | Abel      |            10 | 50000.00 | IT_PROG |
+|           2 | Sundar     | Ande      |            20 | 60000.00 | SA_REP  |
+|           3 | David      | Austin    |            10 | 45000.00 | IT_PROG |
+|           4 | Nancy      | Green     |            30 | 55000.00 | HR_REP  |
++-------------+------------+-----------+---------------+----------+---------+
+4 rows in set (0.00 sec)
