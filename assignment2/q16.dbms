@@ -1,0 +1,17 @@
+
+mysql> SELECT first_name,
+    ->        last_name,
+    ->        LENGTH(first_name) AS `First Name Length`,
+    ->        LENGTH(last_name) AS `Last Name Length`
+    -> FROM employees;
++------------+-----------+-------------------+------------------+
+| first_name | last_name | First Name Length | Last Name Length |
++------------+-----------+-------------------+------------------+
+| Ellen      | Abel      |                 5 |                4 |
+| Sundar     | Ande      |                 6 |                4 |
+| David      | Austin    |                 5 |                6 |
+| Nancy      | Green     |                 5 |                5 |
++------------+-----------+-------------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql>
