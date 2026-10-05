@@ -1,0 +1,12 @@
+
+mysql> SELECT first_name
+    -> FROM employees
+    -> WHERE first_name LIKE '%b%'
+    -> AND first_name LIKE '%c%';
++------------+
+| first_name |
++------------+
+| Bruce      |
+| Rebecca    |
++------------+
+2 rows in set (0.00 sec
