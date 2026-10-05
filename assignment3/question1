@@ -1,0 +1,92 @@
+mysql> create database company;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> use company;
+Database changed
+mysql> CREATE DATABASE company;
+ERROR 1007 (HY000): Can't create database 'company'; database exists
+mysql>
+mysql> USE company;
+Database changed
+mysql>
+mysql> CREATE TABLE employees
+    -> (
+    ->     employee_id INT PRIMARY KEY,
+    ->     first_name VARCHAR(50),
+    ->     last_name VARCHAR(50),
+    ->     email VARCHAR(100),
+    ->     phone_number VARCHAR(20),
+    ->     hire_date DATE,
+    ->     job VARCHAR(50),
+    ->     salary DECIMAL(10,2),
+    ->     department_id INT
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> INSERT INTO employees
+    -> (employee_id, first_name, last_name, email, phone_number, hire_date, job, salary, department_id)
+    -> VALUES
+    -> (100, 'Steven', 'King', 'SKING', '515.123.4567', '1987-06-17', 'President', 24000, 90),
+    ->
+    -> (101, 'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', '1989-09-21', 'Administration', 17000, 90),
+    ->
+    -> (102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', '1993-01-13', 'Administration', 17000, 90),
+    ->
+    -> (103, 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', '1990-01-03', 'Programmer', 9000, 60),
+    ->
+    -> (104, 'Bruce', 'Ernst', 'BERNST', '590.423.4568', '1991-05-21', 'Programmer', 6000, 60),
+    ->
+    -> (105, 'David', 'Austin', 'DAUSTIN', '590.423.4569', '1997-06-25', 'Programmer', 4800, 60),
+    ->
+    -> (106, 'Valli', 'Pataballa', 'VPATABAL', '590.423.4570', '1998-02-05', 'Programmer', 4800, 60),
+    ->
+    -> (107, 'Diana', 'Lorentz', 'DLORENTZ', '590.423.4571', '1999-02-07', 'Programmer', 4200, 60),
+    ->
+    -> (108, 'Nancy', 'Greenberg', 'NGREENBE', '515.124.4569', '1994-08-17', 'Finance Manager', 12000, 100),
+    ->
+    -> (109, 'Daniel', 'Faviet', 'DFAVIET', '515.124.4169', '1994-08-16', 'Accountant', 9000, 100),
+    ->
+    -> (110, 'John', 'Chen', 'JCHEN', '515.124.4269', '1987-09-28', 'Accountant', 8200, 100),
+    ->
+    -> (111, 'Ismael', 'Sciarra', 'ISCIARRA', '515.124.4369', '1987-09-30', 'Accountant', 7700, 100),
+    ->
+    -> (112, 'Jose', 'Manuel', 'JMANUEL', '515.124.4469', '1987-09-30', 'Shipping Clerk', 2600, 30),
+    ->
+    -> (113, 'Luis', 'Popp', 'LPOPP', '515.124.4569', '1987-12-07', 'Shipping Clerk', 6900, 30),
+    ->
+    -> (114, 'Adam', 'Fripp', 'AFRIPP', '515.123.4567', '1998-03-10', 'Shipping Clerk', 8200, 30),
+    ->
+    -> (115, 'Peter', 'Vargas', 'PVARGAS', '515.123.4568', '1998-07-09', 'Shipping Clerk', 2500, 30),
+    ->
+    -> (116, 'Charles', 'Taylor', 'CTAYLOR', '515.123.4569', '1999-01-24', 'Shipping Clerk', 3200, 30),
+    ->
+    -> (117, 'Sarah', 'Bell', 'SBELL', '515.123.4570', '1987-04-23', 'Programmer', 10000, 60),
+    ->
+    -> (118, 'Rebecca', 'Clark', 'RCLARK', '515.123.4571', '1987-05-18', 'Programmer', 15000, 100);
+Query OK, 19 rows affected (0.03 sec)
+Records: 19  Duplicates: 0  Warnings: 0
+
+mysql> SELECT first_name, last_name, salary
+    -> FROM employees
+    -> WHERE salary NOT BETWEEN 10000 AND 15000;
++------------+-----------+----------+
+| first_name | last_name | salary   |
++------------+-----------+----------+
+| Steven     | King      | 24000.00 |
+| Neena      | Kochhar   | 17000.00 |
+| Lex        | De Haan   | 17000.00 |
+| Alexander  | Hunold    |  9000.00 |
+| Bruce      | Ernst     |  6000.00 |
+| David      | Austin    |  4800.00 |
+| Valli      | Pataballa |  4800.00 |
+| Diana      | Lorentz   |  4200.00 |
+| Daniel     | Faviet    |  9000.00 |
+| John       | Chen      |  8200.00 |
+| Ismael     | Sciarra   |  7700.00 |
+| Jose       | Manuel    |  2600.00 |
+| Luis       | Popp      |  6900.00 |
+| Adam       | Fripp     |  8200.00 |
+| Peter      | Vargas    |  2500.00 |
+| Charles    | Taylor    |  3200.00 |
++------------+-----------+----------+
+16 rows in set (0.02 sec)
