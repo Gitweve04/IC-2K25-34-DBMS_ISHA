@@ -1,0 +1,55 @@
+mysql> CREATE DATABASE dbms_assignment_4;
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql> USE dbms_assignment_4;
+Database changed
+mysql> use dbms_assignment_4;
+Database changed
+mysql> CREATE TABLE employees (
+    ->     employee_id INT PRIMARY KEY,
+    ->     first_name VARCHAR(50),
+    ->     last_name VARCHAR(50),
+    ->     email VARCHAR(100),
+    ->     hire_date DATE,
+    ->     job_id VARCHAR(30),
+    ->     salary DECIMAL(10,2),
+    ->     manager_id INT,
+    ->     department_id INT
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> INSERT INTO employees
+    -> (employee_id, first_name, last_name, email, hire_date, job_id, salary, manager_id, department_id)
+    -> VALUES
+    -> (101, 'John', 'Smith', 'john@example.com', '2020-01-15', 'MANAGER', 8000, NULL, 10),
+    ->
+    -> (102, 'Alice', 'Brown', 'alice@example.com', '2021-03-10', 'PROGRAMMER', 5000, 101, 10),
+    -> (103, 'Bob', 'Davis', 'bob@example.com', '2021-05-20', 'PROGRAMMER', 4500, 101, 10),
+    -> (104, 'Carol', 'Wilson', 'carol@example.com', '2022-02-12', 'PROGRAMMER', 4000, 101, 10),
+    -> (105, 'David', 'Taylor', 'david@example.com', '2022-07-18', 'ANALYST', 6000, 101, 10),
+    ->
+    -> (106, 'Emma', 'Anderson', 'emma@example.com', '2020-04-22', 'MANAGER', 7500, NULL, 20),
+    -> (107, 'Frank', 'Thomas', 'frank@example.com', '2021-06-15', 'PROGRAMMER', 4800, 106, 20),
+    -> (108, 'Grace', 'Jackson', 'grace@example.com', '2022-01-19', 'ANALYST', 5500, 106, 20),
+    -> (109, 'Henry', 'White', 'henry@example.com', '2022-08-10', 'CLERK', 3000, 106, 20),
+    ->
+    -> (110, 'Ivy', 'Harris', 'ivy@example.com', '2020-09-05', 'MANAGER', 9000, NULL, 30),
+    -> (111, 'Jack', 'Martin', 'jack@example.com', '2021-02-14', 'PROGRAMMER', 5200, 110, 30),
+    -> (112, 'Kate', 'Thompson', 'kate@example.com', '2021-05-17', 'PROGRAMMER', 4600, 110, 30),
+    -> (113, 'Leo', 'Garcia', 'leo@example.com', '2022-03-21', 'ANALYST', 5800, 110, 30),
+    ->
+    -> (114, 'Mia', 'Martinez', 'mia@example.com', '2020-11-11', 'MANAGER', 8500, NULL, 40),
+    -> (115, 'Noah', 'Robinson', 'noah@example.com', '2021-01-13', 'PROGRAMMER', 4700, 114, 40),
+    -> (116, 'Olivia', 'Clark', 'olivia@example.com', '2021-04-25', 'CLERK', 2800, 114, 40),
+    ->
+    -> (117, 'Paul', 'Rodriguez', 'paul@example.com', '2022-05-12', 'PROGRAMMER', 4300, 101, 10),
+    -> (118, 'Quinn', 'Lewis', 'quinn@example.com', '2022-06-14', 'CLERK', 3200, 101, 10),
+    -> (119, 'Rose', 'Lee', 'rose@example.com', '2022-09-18', 'ANALYST', 6200, 101, 10),
+    -> (120, 'Sam', 'Walker', 'sam@example.com', '2023-01-20', 'PROGRAMMER', 4100, 101, 10),
+    ->
+    -> (121, 'Tom', 'Hall', 'tom@example.com', '2023-02-11', 'CLERK', 3100, 101, 10),
+    -> (122, 'Uma', 'Allen', 'uma@example.com', '2023-03-15', 'PROGRAMMER', 4400, 101, 10),
+    -> (123, 'Victor', 'Young', 'victor@example.com', '2023-04-17', 'ANALYST', 5700, 101, 10);
+Query OK, 23 rows affected (0.03 sec)
+Records: 23  Duplicates: 0  Warnings: 0
