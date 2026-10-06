@@ -1,0 +1,8 @@
+mysql> SELECT SUM(salary) AS Total_Salary
+    -> FROM employees;
++--------------+
+| Total_Salary |
++--------------+
+|    119900.00 |
++--------------+
+1 row in set (0.00 sec)
