@@ -1,0 +1,28 @@
+mysql> SELECT MAX(salary) AS fifth_max_salary
+    -> FROM employees
+    -> WHERE salary <
+    -> (
+    ->     SELECT MAX(salary)
+    ->     FROM employees
+    ->     WHERE salary <
+    ->     (
+    ->         SELECT MAX(salary)
+    ->         FROM employees
+    ->         WHERE salary <
+    ->         (
+    ->             SELECT MAX(salary)
+    ->             FROM employees
+    ->             WHERE salary <
+    ->             (
+    ->                 SELECT MAX(salary)
+    ->                 FROM employees
+    ->             )
+    ->         )
+    ->     )
+    -> );
++------------------+
+| fifth_max_salary |
++------------------+
+|         70000.00 |
++------------------+
+1 row in set (0.00 sec)
