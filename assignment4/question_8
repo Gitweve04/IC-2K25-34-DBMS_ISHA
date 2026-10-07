@@ -1,0 +1,9 @@
+mysql> SELECT
+    ->     MAX(salary) - MIN(salary) AS Salary_Difference
+    -> FROM employees;
++-------------------+
+| Salary_Difference |
++-------------------+
+|           6200.00 |
++-------------------+
+1 row in set (0.00 sec)
